@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">CompraVenta</string>
+
+    <string name="textTitle">Titulo</string>
+    <string name="inputTitleClasificado">Titulo...</string>
+    <string name="textDescipcion">Descipcion (opcional)</string>
+    <string name="inputDescripcion">Descripcion del producto...</string>
+    <string name="textEmail">Correo de contacto</string>
+    <string name="inputEmail">Correo electronico...</string>
+    <string name="textPrecio">Precio</string>
+    <string name="inputPrecio">Precio...</string>
+    <string name="textCategoria">Categoria</string>
+
+    <string-array name="spinnerCategoria">
+        <item>INDUMENTARIA</item>
+        <item>ELECTRONICA</item>
+        <item>ENTRETENIMIENTO</item>
+        <item>JARDIN</item>
+        <item>VEHICULOS</item>
+        <item>JUGUETES</item>
+    </string-array>
+
+    <string name="textDescuentoEnvio">Ofrecer descuento de envio</string>
+    <string name="textPorcentaje">0</string>
+    <string name="textRetiroPersona">Retiro en persona</string>
+    <string name="textDireccionRetiro">Direccion de retiro</string>
+    <string name="inputDireccionRetiro">Direccion de retiro...</string>
+    <string name="textTerminos">Aceptar los terminos y condiciones</string>
+    <string name="textPublicar">PUBLICAR</string>
+
 </resources>
