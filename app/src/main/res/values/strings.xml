@@ -19,6 +19,8 @@
         <item>VEHICULOS</item>
         <item>JUGUETES</item>
         <item>CELULARES</item>
+
+
     </string-array>
 
     <string name="textDescuentoEnvio">Ofrecer descuento de envio</string>
