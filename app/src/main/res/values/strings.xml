@@ -18,6 +18,7 @@
         <item>JARDIN</item>
         <item>VEHICULOS</item>
         <item>JUGUETES</item>
+
     </string-array>
 
     <string name="textDescuentoEnvio">Ofrecer descuento de envio</string>
