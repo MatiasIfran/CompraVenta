@@ -11,6 +11,9 @@
     <string name="inputPrecio">Precio...</string>
     <string name="textCategoria">Categoria</string>
 
+
+
+
     <string-array name="spinnerCategoria">
         <item>INDUMENTARIA</item>
         <item>ELECTRONICA</item>
