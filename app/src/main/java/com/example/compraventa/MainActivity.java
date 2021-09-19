@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                         porcentaje.setText(String.valueOf(progress));
-
                     }
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) { }
@@ -116,15 +115,16 @@ public class MainActivity extends AppCompatActivity {
                         return;
                     }
                 }
-                if(retiroPersona.isChecked()){
+                if(retiroPersona.isChecked()) {
                     String direccionRetiro = editDireccion.getText().toString();
-                    if("".equals(direccionRetiro)){
+                    if ("".equals(direccionRetiro)) {
                         //editDireccion.setError("Ingrese la direccion de retiro");
                         //editDireccion.requestFocus();
                         Toast.makeText(MainActivity.this, "Ingrese la direccion de retiro", Toast.LENGTH_LONG).show();
                         return;
                     }
                 }
+                Toast.makeText(MainActivity.this, "Se ha guardado con exito", Toast.LENGTH_LONG).show();
             }
         });
     }
