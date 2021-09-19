@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                         //porcentaje.requestFocus();
                         Toast.makeText(MainActivity.this, "Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio", Toast.LENGTH_LONG).show();
                         return;
+
                     }
                 }
                 if(retiroPersona.isChecked()) {
