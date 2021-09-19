@@ -83,11 +83,13 @@ public class MainActivity extends AppCompatActivity {
                    // tituloClasificado.setError("Ingrese el titulo");
                    // tituloClasificado.requestFocus();
                     Toast.makeText(MainActivity.this, "Ingrese el titulo", Toast.LENGTH_LONG).show();
+                    return;
                 }
                 String correo = email.getText().toString();
                 if(!validarEmail(correo)){
                     //email.setError("Ingrese un correo electrónico valido");
                     Toast.makeText(MainActivity.this, "Ingrese un correo electrónico valido", Toast.LENGTH_LONG).show();
+                    return;
                 }
                 String precio = precioPublicacion.getText().toString();
                 Double numPrecio = 0.0;
@@ -95,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                     //precioPublicacion.setError("Ingrese el precio");
                     //precioPublicacion.requestFocus();
                     Toast.makeText(MainActivity.this, "Ingrese el precio", Toast.LENGTH_LONG).show();
+                    return;
                 }else{
                     numPrecio = Double.parseDouble(precio);
                 }
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     //precioPublicacion.setError("El precio debe ser mayor a 0");
                     //precioPublicacion.requestFocus();
                     Toast.makeText(MainActivity.this, "El precio debe ser mayor a 0", Toast.LENGTH_LONG).show();
+                    return;
                 }
                 if(switchEvent.isChecked()){
                     Integer descuentoEnvio = Integer.parseInt(porcentaje.getText().toString());
@@ -109,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                         //porcentaje.setError("Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio");
                         //porcentaje.requestFocus();
                         Toast.makeText(MainActivity.this, "Por favor seleccione un porcentaje mayor a 0 o quite la opcion de ofrecer descuento de envio", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 }
                 if(retiroPersona.isChecked()){
@@ -117,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         //editDireccion.setError("Ingrese la direccion de retiro");
                         //editDireccion.requestFocus();
                         Toast.makeText(MainActivity.this, "Ingrese la direccion de retiro", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 }
             }
