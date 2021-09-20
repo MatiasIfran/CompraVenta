@@ -1,9 +1,6 @@
 package com.example.compraventa;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Patterns;
-import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -11,9 +8,7 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.regex.Pattern;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.fila_cat);
+/*
         //obtengo las variables de la vista
         switchEvent = (Switch) findViewById(R.id.switch1);
         editDireccion = (EditText) findViewById(R.id.editDireccion);
@@ -61,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         publicar = (Button) findViewById(R.id.button);
 
         Integer porcentajeInt = 0;
-        seekbar.setOnSeekBarChangeListener( //funcion para que se ve el porcentaje mientras se mueve
+       /* seekbar.setOnSeekBarChangeListener( //funcion para que se ve el porcentaje mientras se mueve
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -73,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onStopTrackingTouch(SeekBar seekBar) { }
                 }
         );
+
 
         publicar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -161,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();
+        return pattern.matcher(email).matches();*/
     }
 
 }

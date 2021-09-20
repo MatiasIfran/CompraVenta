@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">CompraVenta</string>
-
     <string name="textTitle">Titulo</string>
     <string name="inputTitleClasificado">Titulo...</string>
     <string name="textDescipcion">Descipcion (opcional)</string>
@@ -18,9 +17,6 @@
         <item>JARDIN</item>
         <item>VEHICULOS</item>
         <item>JUGUETES</item>
-
-        <!-- esto es una prueba -->
-
     </string-array>
 
     <string name="textDescuentoEnvio">Ofrecer descuento de envio</string>
@@ -30,5 +26,4 @@
     <string name="inputDireccionRetiro">Direccion de retiro...</string>
     <string name="textTerminos">Aceptar los terminos y condiciones</string>
     <string name="textPublicar">PUBLICAR</string>
-
 </resources>
