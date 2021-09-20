@@ -11,9 +11,6 @@
     <string name="inputPrecio">Precio...</string>
     <string name="textCategoria">Categoria</string>
 
-
-
-
     <string-array name="spinnerCategoria">
         <item>INDUMENTARIA</item>
         <item>ELECTRONICA</item>
@@ -21,14 +18,6 @@
         <item>JARDIN</item>
         <item>VEHICULOS</item>
         <item>JUGUETES</item>
-        <item>CELULARES</item>
-        <item>AUTO</item>
-
-
-
-
-
-
     </string-array>
 
     <string name="textDescuentoEnvio">Ofrecer descuento de envio</string>
