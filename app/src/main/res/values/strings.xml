@@ -26,4 +26,5 @@
     <string name="inputDireccionRetiro">Direccion de retiro...</string>
     <string name="textTerminos">Aceptar los terminos y condiciones</string>
     <string name="textPublicar">PUBLICAR</string>
+    <string name="textSelecCategoria">Selecionar Categoria</string>
 </resources>

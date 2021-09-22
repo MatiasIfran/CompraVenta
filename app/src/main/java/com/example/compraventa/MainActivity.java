@@ -1,6 +1,8 @@
 package com.example.compraventa;
 
 import android.os.Bundle;
+import android.util.Patterns;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -8,7 +10,14 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,23 +37,27 @@ public class MainActivity extends AppCompatActivity {
     private SeekBar seekbar;
     private Switch switchEvent;
     private Button publicar;
+    private Button categoria;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fila_cat);
-/*
+        setContentView(R.layout.activity_main);
+
+
         //obtengo las variables de la vista
         switchEvent = (Switch) findViewById(R.id.switch1);
         editDireccion = (EditText) findViewById(R.id.editDireccion);
         tituloClasificado = (EditText) findViewById(R.id.tituloClasificado);
         precioPublicacion = (EditText) findViewById(R.id.editTextNumberDecimal);
         email = (EditText) findViewById(R.id.editCorreo);
-        spinner = (Spinner) findViewById(R.id.spinner);
+        //spinner = (Spinner) findViewById(R.id.spinner);
         porcentaje = (TextView)findViewById(R.id.textView8);
         direccion = (TextView)findViewById(R.id.textView6);
         publicar = (Button) findViewById(R.id.button);
         seekbar = (SeekBar)findViewById(R.id.seekBar);
+        categoria = (Button)findViewById(R.id.buttonCategoria);
 
         //asigno valores max y min al seekbar
         seekbar.setProgress(0);
@@ -56,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         publicar = (Button) findViewById(R.id.button);
 
         Integer porcentajeInt = 0;
-       /* seekbar.setOnSeekBarChangeListener( //funcion para que se ve el porcentaje mientras se mueve
+        seekbar.setOnSeekBarChangeListener( //funcion para que se ve el porcentaje mientras se mueve
                 new SeekBar.OnSeekBarChangeListener() {
                     @Override
                     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -69,9 +82,28 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        categoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(categoria.isClickable()) {
+                    setContentView(R.layout.fila_cat);
+                    RecyclerView recycler;
+                    recycler = (RecyclerView) findViewById(R.id.recyclerID);
+                    recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
+                    ArrayList<String> listDatos;
+                    listDatos = new ArrayList<String>();
+
+                    for (int i = 0; i < 50; i++) {
+                        listDatos.add("Dato # " + i + " ");
+                    }
+                    CategoryViewHolder category = new CategoryViewHolder(listDatos);
+                    recycler.setAdapter(category);
+
+                }
+            }
+        });
 
         publicar.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 String titulo = tituloClasificado.getText().toString();
                 if("".equals(titulo)){
@@ -125,6 +157,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
+
     public void presionSwitch(View view) {
         if(view.getId() == R.id.switch1){
             if(switchEvent.isChecked()){
@@ -157,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validarEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
-        return pattern.matcher(email).matches();*/
+        return pattern.matcher(email).matches();
     }
 
 }
