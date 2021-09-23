@@ -1,5 +1,6 @@
 package com.example.compraventa;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -14,7 +15,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import java.util.ArrayList;
 import java.util.regex.Pattern;
@@ -86,15 +89,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(categoria.isClickable()) {
-                    setContentView(R.layout.fila_cat);
+                    setContentView(R.layout.muestra_datos);
                     RecyclerView recycler;
                     recycler = (RecyclerView) findViewById(R.id.recyclerID);
+                    Resources res = getResources();
+                    String[] categoria = res.getStringArray(R.array.spinnerCategoria);
+
+                    SnapHelper snapHelper = new LinearSnapHelper();
+                    snapHelper.attachToRecyclerView(recycler);
+
                     recycler.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
                     ArrayList<String> listDatos;
                     listDatos = new ArrayList<String>();
 
-                    for (int i = 0; i < 50; i++) {
-                        listDatos.add("Dato # " + i + " ");
+                    for (int i = 0; i < categoria.length; i++) {
+                        listDatos.add(categoria[i]);
                     }
                     CategoryViewHolder category = new CategoryViewHolder(listDatos);
                     recycler.setAdapter(category);

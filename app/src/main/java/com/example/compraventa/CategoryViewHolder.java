@@ -3,7 +3,7 @@ package com.example.compraventa;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,8 +19,8 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
 
     @Override
     public ViewHolderDatos onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view1 = LayoutInflater.from(parent.getContext()).inflate(R.layout.fila_cat,null,false);
-        return new ViewHolderDatos(view1);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.fila_cat,null,false);
+        return new ViewHolderDatos(view);
     }
 
     @Override
@@ -34,15 +34,11 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
-
-        private TextView mName;
-
+        private Button mName;
         public ViewHolderDatos(View itemView) {
             super(itemView);
-
-            mName=itemView.findViewById(R.id.textViewHolder);
+            mName=itemView.findViewById(R.id.categoriaCardView);
         }
-
         public void asignarDatos(String s) {
             mName.setText(s);
         }
