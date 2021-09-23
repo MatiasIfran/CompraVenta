@@ -23,6 +23,16 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
         return new ViewHolderDatos(view);
     }
 
+
+
+
+
+
+
+
+
+
+
     @Override
     public void onBindViewHolder(CategoryViewHolder.ViewHolderDatos holder, int position) {
         holder.asignarDatos(listDatos.get(position));
