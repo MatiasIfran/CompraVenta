@@ -5,23 +5,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:orientation="vertical">
 
-
-    <androidx.cardview.widget.CardView
+    <ListView
+        android:id="@+id/lv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"/>
 
-        <Button
-            android:id="@+id/categoriaCardView"
-            android:layout_width="1000px"
-            android:layout_height="150px"
-            android:paddingBottom="25dp"
-            android:layout_gravity="center"
-            />
-
-    </androidx.cardview.widget.CardView>
-
+    <Button
+        android:id="@+id/categoriaCardView"
+        android:layout_width="1000px"
+        android:layout_height="150px"
+        android:layout_gravity="center"
+        android:paddingBottom="25dp" />
 
 </LinearLayout>

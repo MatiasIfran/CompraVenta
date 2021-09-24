@@ -1,5 +1,6 @@
 package com.example.compraventa;
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Patterns;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView porcentaje;
     private TextView direccion;
+    private TextView catSeleccionada;
 
     private CheckBox retiroPersona;
     private CheckBox aceptarTerminos;
@@ -58,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         //spinner = (Spinner) findViewById(R.id.spinner);
         porcentaje = (TextView)findViewById(R.id.textView8);
         direccion = (TextView)findViewById(R.id.textView6);
+        catSeleccionada=(TextView)findViewById(R.id.textView5);
         publicar = (Button) findViewById(R.id.button);
         seekbar = (SeekBar)findViewById(R.id.seekBar);
         categoria = (Button)findViewById(R.id.buttonCategoria);
@@ -88,8 +91,10 @@ public class MainActivity extends AppCompatActivity {
         categoria.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(categoria.isClickable()) {
-                    setContentView(R.layout.muestra_datos);
+                Intent i1= new Intent(MainActivity.this, activity2.class);
+                startActivityForResult(i1, 1);
+              /*   if(categoria.isClickable()) {
+                   setContentView(R.layout.muestra_datos);
                     RecyclerView recycler;
                     recycler = (RecyclerView) findViewById(R.id.recyclerID);
                     Resources res = getResources();
@@ -108,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
                     CategoryViewHolder category = new CategoryViewHolder(listDatos);
                     recycler.setAdapter(category);
 
-                }
+                }*/
             }
         });
 
@@ -166,6 +171,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    protected void onActivityResult (int requestCode, int resultCode, Intent data){
+        if((requestCode==1) && (resultCode==RESULT_OK)){
+            catSeleccionada.setText(data.getDataString());
+        }
+    }
 
 
     public void presionSwitch(View view) {
