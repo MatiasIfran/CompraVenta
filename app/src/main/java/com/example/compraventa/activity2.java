@@ -11,19 +11,22 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class activity2 extends Activity {
-    private Button botonCategoria;
     private ListView lv;
     private String[] categoria;
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fila_cat);
 
-        botonCategoria = (Button) findViewById(R.id.categoriaCardView);
         Resources res = getResources();
         categoria = res.getStringArray(R.array.spinnerCategoria);
 

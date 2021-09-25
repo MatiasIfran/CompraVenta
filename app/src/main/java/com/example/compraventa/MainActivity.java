@@ -148,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "El precio debe ser mayor a 0", Toast.LENGTH_LONG).show();
                     return;
                 }
+                String catSeleccionado = catSeleccionada.getText().toString();
+                if(catSeleccionado.equals("")){
+                    Toast.makeText(MainActivity.this, "Ingrese una categoria", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 if(switchEvent.isChecked()){
                     Integer descuentoEnvio = Integer.parseInt(porcentaje.getText().toString());
                     if(descuentoEnvio==0){

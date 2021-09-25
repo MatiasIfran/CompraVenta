@@ -1,9 +1,11 @@
 package com.example.compraventa;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -23,16 +25,6 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
         return new ViewHolderDatos(view);
     }
 
-
-
-
-
-
-
-
-
-
-
     @Override
     public void onBindViewHolder(CategoryViewHolder.ViewHolderDatos holder, int position) {
         holder.asignarDatos(listDatos.get(position));
@@ -44,13 +36,17 @@ public class CategoryViewHolder extends RecyclerView.Adapter<CategoryViewHolder.
     }
 
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
-        private Button mName;
+        private ListView lv;
         public ViewHolderDatos(View itemView) {
             super(itemView);
-            mName=itemView.findViewById(R.id.categoriaCardView);
+            lv=itemView.findViewById(R.id.lv);
         }
         public void asignarDatos(String s) {
-            mName.setText(s);
+          //  lv.setText(s);
         }
+
+        Intent intent = new Intent();
+
+
     }
 }
